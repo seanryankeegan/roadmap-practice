@@ -1,0 +1,16 @@
+name: ADO Listener
+
+on:
+  repository_dispatch:
+    types: [ado-event]
+
+jobs:
+  handle-ado-event:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Handle ADO Event
+      run: echo "Handling ADO event triggered by Azure DevOps"
